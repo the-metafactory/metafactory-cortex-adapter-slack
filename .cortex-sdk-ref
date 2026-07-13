@@ -1,14 +1,9 @@
 # Pinned cortex ref the surface-sdk .d.ts is synced from (cortex#1950).
 # Bump to adopt a new SURFACE_SDK_VERSION; see scripts/sync-surface-sdk.ts.
 #
-# TEMPORARY: pinned to e2d94ea0 on cortex's feat/1795-extract-slack branch
-# (NOT main) — the commit adding AdapterSystemEventPort +
+# Pinned to the post-merge squash commit on cortex main (cortex#1795, S10
+# MOVE) — the durable commit carrying AdapterSystemEventPort +
 # GatewayConstructBase.systemEvents/formatEnvelope this bundle's src/plugin.ts
-# and src/index.ts need. 9bbe4f40 (the originally-suggested "durable main"
-# ref) predates that S10 inversion slice and lacks the port. A pre-merge
-# branch SHA risks the same GC-doom the web bundle's .cortex-sdk-ref comment
-# warns about (#1956 review) if the branch is ever deleted without the
-# commit reachable elsewhere — REPIN to the post-merge squash commit on
-# cortex main once cortex#1795 (S10 MOVE) lands, same follow-up web already
-# did once for its own ref.
-e2d94ea0
+# and src/index.ts need. Repinned off the pre-merge branch SHA e2d94ea0
+# (#1956-class GC-doom avoidance) once S10 landed on main.
+fb6084ca
