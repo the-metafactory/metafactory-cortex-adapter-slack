@@ -215,3 +215,12 @@ export const slackAdapterPlugin: AdapterPlugin = {
     );
   },
 };
+
+// cortex#1795 (S10 MOVE) — this bundle's `cortex-plugin.yaml` declares
+// `kind: adapter`, `id: slack`, `entry: ./src/plugin.ts`, `sdkRange: "^1"`.
+// The default export IS the `SurfacePlugin` (ADR-0024 D1: "sdkRange in its
+// default-exported SurfacePlugin") — cortex's S6 loader reads
+// `defaultExport.sdkRange` at `import()` time to gate compatibility, and
+// requires the default export (not a named one) to satisfy the
+// `AdapterPlugin` shape (`src/adapters/loader.ts`'s `isAdapterPluginShape`).
+export default { ...slackAdapterPlugin, sdkRange: "^1" as const };
